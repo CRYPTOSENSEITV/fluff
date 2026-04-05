@@ -22,16 +22,8 @@ const CTA_VIDEO = 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIX
 
 const NFT_CARDS = [
   {
-    video: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260331_053923_22c0a6a5-313c-474c-85ff-3b50d25e944a.mp4',
-    score: '8.7/10',
-  },
-  {
-    video: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260331_054411_511c1b7a-fb2f-42ef-bf6c-32c0b1a06e79.mp4',
+    video: '/nft-card.mp4',
     score: '9/10',
-  },
-  {
-    video: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260331_055427_ac7035b5-9f3b-4289-86fc-941b2432317d.mp4',
-    score: '8.2/10',
   },
 ]
 
@@ -247,44 +239,42 @@ export default function App() {
           </div>
 
           {/* Card Grid */}
-          <div className="nft-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 24, maxWidth: 600, margin: '0 auto' }}>
             {NFT_CARDS.map((card, i) => (
-              <div key={i} className="liquid-glass" style={{ borderRadius: 32, padding: 18 }}>
-                {/* Square video */}
-                <div style={{ position: 'relative', paddingBottom: '100%', borderRadius: 24, overflow: 'hidden' }}>
-                  <video
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-                    src={card.video}
-                    autoPlay loop muted playsInline
-                  />
-                </div>
-
-                {/* Bottom bar */}
-                <div className="liquid-glass" style={{ marginTop: 16, borderRadius: 20, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div>
-                    <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 11, color: 'rgba(239,244,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
-                      Rarity Score:
-                    </p>
-                    <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 16, color: '#EFF4FF', fontWeight: 700, margin: 0 }}>
-                      {card.score}
-                    </p>
+              <a key={i} href="https://fluff-shop.fourthwall.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <div className="liquid-glass" style={{ borderRadius: 32, padding: 18, cursor: 'pointer' }}>
+                  {/* Square video */}
+                  <div style={{ position: 'relative', paddingBottom: '100%', borderRadius: 24, overflow: 'hidden' }}>
+                    <video
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                      src={card.video}
+                      autoPlay loop muted playsInline
+                    />
                   </div>
-                  <button style={{
-                    width: 48, height: 48, borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #b724ff, #7c3aed)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 8px 24px rgba(139,92,246,0.5)',
-                    border: 'none', cursor: 'pointer', transition: 'transform 0.2s',
-                  }}
-                    onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.1)')}
-                    onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </button>
+
+                  {/* Bottom bar */}
+                  <div className="liquid-glass" style={{ marginTop: 16, borderRadius: 20, padding: '16px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div>
+                      <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 11, color: 'rgba(239,244,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>
+                        Rarity Score:
+                      </p>
+                      <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 16, color: '#EFF4FF', fontWeight: 700, margin: 0 }}>
+                        {card.score}
+                      </p>
+                    </div>
+                    <div style={{
+                      width: 48, height: 48, borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #b724ff, #7c3aed)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      boxShadow: '0 8px 24px rgba(139,92,246,0.5)',
+                    }}>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
