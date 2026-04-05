@@ -117,7 +117,6 @@ export default function App() {
                   { label: 'Homepage', href: '#' },
                   { label: 'Gallery', href: 'https://www.instagram.com/fluff_universe' },
                   { label: 'Shop', href: 'https://fluff-shop.fourthwall.com' },
-                  { label: 'Contact', href: '#' },
                 ].map(({ label, href }) => (
                   <li key={label}>
                     <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontFamily: '"Anton", sans-serif', fontSize: 13, textTransform: 'uppercase', color: '#EFF4FF', textDecoration: 'none' }}
