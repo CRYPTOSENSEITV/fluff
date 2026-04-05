@@ -201,7 +201,7 @@ export default function App() {
                 Fluff
               </span>
             </div>
-
+          </div>
         </div>
       </section>
 
