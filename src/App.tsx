@@ -202,39 +202,6 @@ export default function App() {
               </span>
             </div>
 
-            {/* Right Paragraph */}
-            <p style={{
-              fontFamily: 'ui-monospace, monospace',
-              fontSize: 15,
-              textTransform: 'uppercase',
-              color: '#EFF4FF',
-              maxWidth: 266,
-              lineHeight: 1.7,
-              margin: 0,
-            }}>
-              A digital object fixed beyond time and place. An exploration of distance, form, and silence in space
-            </p>
-          </div>
-
-          {/* Bottom Row: Decorative columns */}
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', gap: 32 }}>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24 }}>
-              <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 14, textTransform: 'uppercase', color: '#EFF4FF', opacity: 0.1, lineHeight: 1.7, margin: 0 }}>
-                A digital object fixed beyond time and place. An exploration of distance, form, and silence in space
-              </p>
-              <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 14, textTransform: 'uppercase', color: '#EFF4FF', opacity: 0.1, lineHeight: 1.7, margin: 0 }}>
-                A digital object fixed beyond time and place. An exploration of distance, form, and silence in space
-              </p>
-            </div>
-            <div className="about-right-col" style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 24 }}>
-              <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 14, textTransform: 'uppercase', color: '#EFF4FF', opacity: 0.1, lineHeight: 1.7, margin: 0 }}>
-                A digital object fixed beyond time and place. An exploration of distance, form, and silence in space
-              </p>
-              <p style={{ fontFamily: 'ui-monospace, monospace', fontSize: 14, textTransform: 'uppercase', color: '#EFF4FF', opacity: 0.1, lineHeight: 1.7, margin: 0 }}>
-                A digital object fixed beyond time and place. An exploration of distance, form, and silence in space
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
