@@ -207,15 +207,10 @@ export default function App() {
             {/* Left Heading */}
             <div>
               <div style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
-                Collection of
+                The <span style={{ fontFamily: '"Condiment", cursive', color: '#6FFF00' }}>Fluff</span> Universe
               </div>
-              <div style={{ marginLeft: 'clamp(48px, 5vw, 128px)', display: 'flex', alignItems: 'baseline', gap: 12 }}>
-                <span style={{ fontFamily: '"Condiment", cursive', fontSize: 'clamp(32px, 5vw, 60px)', color: '#6FFF00' }}>
-                  Space
-                </span>
-                <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
-                  objects
-                </span>
+              <div style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
+                Collection
               </div>
             </div>
 
