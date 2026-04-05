@@ -214,23 +214,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Right: See All Button */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', cursor: 'pointer' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-end', gap: 12 }}>
-                <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
-                  SEE
-                </span>
-                <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1, paddingBottom: 4 }}>
-                  <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(20px, 3vw, 36px)', textTransform: 'uppercase', color: '#EFF4FF' }}>
-                    ALL
-                  </span>
-                  <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(20px, 3vw, 36px)', textTransform: 'uppercase', color: '#EFF4FF' }}>
-                    CREATORS
-                  </span>
-                </div>
-              </div>
-              <div style={{ width: '100%', height: 8, backgroundColor: '#6FFF00', marginTop: 8 }} />
-            </div>
           </div>
 
           {/* Card Grid */}
