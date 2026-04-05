@@ -116,7 +116,7 @@ export default function App() {
                 {[
                   { label: 'Homepage', href: '#' },
                   { label: 'Gallery', href: 'https://www.instagram.com/fluff_universe' },
-                  { label: 'Buy NFT', href: '#' },
+                  { label: 'Shop', href: 'https://fluff-shop.fourthwall.com' },
                   { label: 'Contact', href: '#' },
                 ].map(({ label, href }) => (
                   <li key={label}>
