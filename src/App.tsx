@@ -162,7 +162,7 @@ export default function App() {
                 pointerEvents: 'none',
                 userSelect: 'none',
               }}>
-                Nft collection
+                Fluff Universe collection
               </span>
 
               {/* Mobile social icons */}
