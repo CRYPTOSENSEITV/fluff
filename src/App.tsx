@@ -113,13 +113,18 @@ export default function App() {
             {/* Center Nav */}
             <nav className="liquid-glass" id="desktop-nav" style={{ borderRadius: 28, padding: '24px 52px' }}>
               <ul style={{ display: 'flex', gap: 40, listStyle: 'none', margin: 0, padding: 0 }}>
-                {['Homepage', 'Gallery', 'Buy NFT', 'FAQ', 'Contact'].map((link) => (
-                  <li key={link}>
-                    <a href="#" style={{ fontFamily: '"Anton", sans-serif', fontSize: 13, textTransform: 'uppercase', color: '#EFF4FF', textDecoration: 'none' }}
+                {[
+                  { label: 'Homepage', href: '#' },
+                  { label: 'Gallery', href: 'https://www.instagram.com/fluff_universe' },
+                  { label: 'Buy NFT', href: '#' },
+                  { label: 'Contact', href: '#' },
+                ].map(({ label, href }) => (
+                  <li key={label}>
+                    <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontFamily: '"Anton", sans-serif', fontSize: 13, textTransform: 'uppercase', color: '#EFF4FF', textDecoration: 'none' }}
                       onMouseEnter={e => (e.currentTarget.style.color = '#6FFF00')}
                       onMouseLeave={e => (e.currentTarget.style.color = '#EFF4FF')}
                     >
-                      {link}
+                      {label}
                     </a>
                   </li>
                 ))}
