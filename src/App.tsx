@@ -107,7 +107,7 @@ export default function App() {
           {/* Header */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 40 }}>
             <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 16, textTransform: 'uppercase', color: '#EFF4FF', letterSpacing: '0.15em' }}>
-              Fluff.Nft
+              Fluff Universe
             </span>
 
             {/* Center Nav */}
