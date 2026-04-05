@@ -107,7 +107,7 @@ export default function App() {
           {/* Header */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 40 }}>
             <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 16, textTransform: 'uppercase', color: '#EFF4FF', letterSpacing: '0.15em' }}>
-              Orbis.Nft
+              Fluff.Nft
             </span>
 
             {/* Center Nav */}
@@ -200,7 +200,7 @@ export default function App() {
               }}>
                 Hello!
                 <br />
-                I'm orbis
+                I'm fluff
               </h2>
               <span style={{
                 position: 'absolute',
@@ -215,7 +215,7 @@ export default function App() {
                 pointerEvents: 'none',
                 userSelect: 'none',
               }}>
-                Orbis
+                Fluff
               </span>
             </div>
 
