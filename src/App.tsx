@@ -92,7 +92,7 @@ export default function App() {
             </span>
 
             {/* Center Nav */}
-            <nav className="liquid-glass" id="desktop-nav" style={{ borderRadius: 28, padding: '24px 52px' }}>
+            <nav className="liquid-glass" id="desktop-nav" style={{ borderRadius: 28, padding: '24px 52px', position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
               <ul style={{ display: 'flex', gap: 40, listStyle: 'none', margin: 0, padding: 0 }}>
                 {[
                   { label: 'Homepage', href: '#' },
