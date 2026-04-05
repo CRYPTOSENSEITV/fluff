@@ -35,25 +35,6 @@ const NFT_CARDS = [
   },
 ]
 
-function SocialIconsStacked({ className = '' }: { className?: string }) {
-  return (
-    <div className={`liquid-glass rounded-[1rem] overflow-hidden flex flex-col ${className}`}>
-      {[
-        { Icon: Mail, label: 'Mail' },
-        { Icon: TwitterIcon, label: 'Twitter' },
-        { Icon: GithubIcon, label: 'Github' },
-      ].map(({ Icon, label }, i) => (
-        <button
-          key={label}
-          aria-label={label}
-          className={`flex items-center justify-center w-14 h-14 hover:bg-white/10 transition-colors cursor-pointer ${i < 2 ? 'border-b border-white/10' : ''}`}
-        >
-          <Icon size={20} color="#EFF4FF" />
-        </button>
-      ))}
-    </div>
-  )
-}
 
 function SocialIconsRow() {
   return (
