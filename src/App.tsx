@@ -130,8 +130,6 @@ export default function App() {
               </ul>
             </nav>
 
-            {/* Desktop social */}
-            <div className="hero-social-desktop"><SocialIconsStacked /></div>
           </div>
 
           {/* Hero Body */}
