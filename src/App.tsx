@@ -226,7 +226,7 @@ export default function App() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(1,8,40,0.2)' }} />
 
           <div style={{ position: 'relative', zIndex: 10, maxWidth: 1831, margin: '0 auto', padding: 'clamp(64px, 8vw, 96px) clamp(24px, 4vw, 64px)', display: 'flex', flexDirection: 'column', gap: 80 }}>
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: 64 }}>
+            <div className="about-row" style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: 64 }}>
               <div style={{ position: 'relative' }}>
                 <h2 className="neon-glow-cream" style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1, margin: 0 }}>
                   Hello!
@@ -309,6 +309,8 @@ export default function App() {
             preload="none"
             aria-hidden="true"
           />
+          {/* Gradient overlay ensures text contrast over any video frame */}
+          <div className="cta-overlay" aria-hidden="true" style={{ position: 'absolute', inset: 0 }} />
 
           <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: 'clamp(5%, 20%, 20%)', paddingLeft: 'clamp(5%, 15%, 15%)' }}>
             <div style={{ position: 'relative', textAlign: 'right' }}>
@@ -321,7 +323,7 @@ export default function App() {
                 Go beyond
               </span>
 
-              <h2 className="neon-glow-cream" style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(16px, 4.5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1.1, margin: 0 }}>
+              <h2 className="neon-glow-cream" style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(28px, 4.5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1.1, margin: 0 }}>
                 <span style={{ display: 'block', marginBottom: 'clamp(16px, 3vw, 48px)' }}>JOIN US.</span>
                 <span style={{ display: 'block' }}>REVEAL WHAT'S HIDDEN.</span>
                 <span style={{ display: 'block' }}>DEFINE WHAT'S NEXT.</span>

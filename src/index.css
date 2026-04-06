@@ -201,9 +201,10 @@ html, body {
   border-radius: 4px;
 }
 
-/* ── Card hover ── */
+/* ── Card hover — GPU composited ── */
 .nft-card-wrap {
   transition: transform 200ms ease, box-shadow 200ms ease;
+  will-change: transform;
 }
 .nft-card-wrap:hover {
   transform: translateY(-4px);
@@ -214,4 +215,27 @@ html, body {
 *:focus-visible {
   outline: 2px solid #6FFF00;
   outline-offset: 3px;
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Video containers: prevent layout shift ── */
+.video-hero {
+  aspect-ratio: 16/9;
+}
+
+/* ── Ensure CTA section text is always readable ── */
+.cta-overlay {
+  background: linear-gradient(to left, rgba(1,8,40,0.6) 0%, rgba(1,8,40,0.2) 60%, transparent 100%);
+}
+
+/* ── Mobile: stack about row ── */
+@media (max-width: 767px) {
+  .about-row {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
 }
