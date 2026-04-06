@@ -49,6 +49,10 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  /* Eliminate 300ms tap delay on mobile */
+  touch-action: manipulation;
+  /* Prevent accidental pull-to-refresh */
+  overscroll-behavior-y: contain;
 }
 
 #root {
@@ -78,6 +82,18 @@ html, body {
   }
   .about-right-col {
     display: none !important;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+}
+
+.mobile-nav-dropdown {
+  display: none;
+}
+@media (max-width: 1023px) {
+  .mobile-nav-dropdown {
+    display: block;
   }
 }
 
