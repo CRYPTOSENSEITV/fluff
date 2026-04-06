@@ -19,7 +19,7 @@
   border: none;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .liquid-glass::before {
@@ -51,8 +51,8 @@ html, body {
   padding: 0;
   /* Eliminate 300ms tap delay on mobile */
   touch-action: manipulation;
-  /* Prevent accidental pull-to-refresh */
-  overscroll-behavior-y: contain;
+  /* Prevent accidental pull-to-refresh on mobile only */
+  overscroll-behavior-x: none;
 }
 
 #root {
