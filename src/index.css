@@ -65,7 +65,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Responsive helpers for hero section */
+/* Responsive helpers */
 @media (max-width: 1023px) {
   #desktop-nav {
     display: none !important;
@@ -79,13 +79,123 @@ html, body {
   .about-right-col {
     display: none !important;
   }
-  .nft-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
 }
 
 @media (max-width: 639px) {
-  .nft-grid {
-    grid-template-columns: 1fr !important;
+  .hero-content {
+    margin-left: 24px !important;
   }
+  .section-pad {
+    padding: 64px 24px !important;
+  }
+}
+
+/* ── Neon glow on headings ── */
+.neon-glow {
+  text-shadow:
+    0 0 10px rgba(111, 255, 0, 0.4),
+    0 0 30px rgba(111, 255, 0, 0.15);
+}
+
+.neon-glow-cream {
+  text-shadow:
+    0 0 20px rgba(239, 244, 255, 0.25),
+    0 0 60px rgba(239, 244, 255, 0.1);
+}
+
+/* ── Scanline overlay ── */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* ── Glitch animation ── */
+@keyframes glitch {
+  0%   { clip-path: inset(0 0 98% 0); transform: translate(-2px, 0); }
+  5%   { clip-path: inset(30% 0 50% 0); transform: translate(2px, 0); }
+  10%  { clip-path: inset(70% 0 10% 0); transform: translate(-1px, 0); }
+  15%  { clip-path: inset(10% 0 80% 0); transform: translate(1px, 0); }
+  20%  { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); }
+}
+
+@keyframes glitch2 {
+  0%   { clip-path: inset(50% 0 30% 0); transform: translate(2px, 0); opacity: 0.7; }
+  5%   { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 0); opacity: 0.5; }
+  10%  { clip-path: inset(20% 0 60% 0); transform: translate(1px, 0); opacity: 0.8; }
+  15%  { clip-path: inset(0 0 0 0); transform: translate(0, 0); opacity: 0; }
+  100% { clip-path: inset(0 0 0 0); transform: translate(0, 0); opacity: 0; }
+}
+
+.glitch-wrapper {
+  position: relative;
+}
+
+.glitch-wrapper::before,
+.glitch-wrapper::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  font-family: inherit;
+  font-size: inherit;
+  text-transform: inherit;
+  line-height: inherit;
+  color: #6FFF00;
+  pointer-events: none;
+}
+
+.glitch-wrapper::before {
+  animation: glitch 6s infinite steps(1);
+  animation-delay: 2s;
+}
+
+.glitch-wrapper::after {
+  animation: glitch2 6s infinite steps(1);
+  animation-delay: 2s;
+  color: #b724ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-wrapper::before,
+  .glitch-wrapper::after {
+    animation: none;
+  }
+}
+
+/* ── Nav link transition ── */
+.nav-link {
+  transition: color 200ms ease, text-shadow 200ms ease;
+}
+.nav-link:hover {
+  color: #6FFF00 !important;
+  text-shadow: 0 0 12px rgba(111, 255, 0, 0.6);
+}
+.nav-link:focus-visible {
+  outline: 2px solid #6FFF00;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ── Card hover ── */
+.nft-card-wrap {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.nft-card-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(111, 255, 0, 0.12);
+}
+
+/* ── Focus visible global ── */
+*:focus-visible {
+  outline: 2px solid #6FFF00;
+  outline-offset: 3px;
 }

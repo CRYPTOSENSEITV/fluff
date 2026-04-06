@@ -27,10 +27,9 @@ const NFT_CARDS = [
   },
 ]
 
-
 function SocialIconsRow() {
   return (
-    <div className="flex flex-row gap-3 justify-center">
+    <div style={{ display: 'flex', flexDirection: 'row', gap: 12, justifyContent: 'center' }}>
       {[
         { Icon: Mail, label: 'Mail' },
         { Icon: TwitterIcon, label: 'Twitter' },
@@ -39,7 +38,15 @@ function SocialIconsRow() {
         <button
           key={label}
           aria-label={label}
-          className="liquid-glass rounded-[1rem] w-14 h-14 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer"
+          className="liquid-glass"
+          style={{
+            borderRadius: '1rem', width: 56, height: 56,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            background: 'transparent', border: 'none', cursor: 'pointer',
+            transition: 'background 200ms ease, transform 200ms ease',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'scale(1.08)' }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.transform = 'scale(1)' }}
         >
           <Icon size={20} color="#EFF4FF" />
         </button>
@@ -51,6 +58,10 @@ function SocialIconsRow() {
 export default function App() {
   return (
     <div style={{ backgroundColor: '#010828', color: '#EFF4FF', minHeight: '100vh', position: 'relative' }}>
+
+      {/* Scanline overlay */}
+      <div className="scanlines" />
+
       {/* Texture Overlay */}
       <div
         style={{
@@ -76,10 +87,10 @@ export default function App() {
         />
         <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(1,8,40,0.35)' }} />
 
-        <div style={{ position: 'relative', zIndex: 10, height: '100%', maxWidth: 1831, margin: '0 auto', padding: '0 64px', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ position: 'relative', zIndex: 10, height: '100%', maxWidth: 1831, margin: '0 auto', padding: '0 clamp(24px, 4vw, 64px)', display: 'flex', flexDirection: 'column' }}>
           {/* Header */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 40 }}>
-            <span style={{ fontFamily: '"Anton", sans-serif', fontSize: 16, textTransform: 'uppercase', color: '#EFF4FF', letterSpacing: '0.15em' }}>
+            <span className="neon-glow-cream" style={{ fontFamily: '"Anton", sans-serif', fontSize: 16, textTransform: 'uppercase', color: '#EFF4FF', letterSpacing: '0.15em' }}>
               Fluff Universe
             </span>
 
@@ -92,9 +103,12 @@ export default function App() {
                   { label: 'Shop', href: 'https://fluff-shop.fourthwall.com' },
                 ].map(({ label, href }) => (
                   <li key={label}>
-                    <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontFamily: '"Anton", sans-serif', fontSize: 13, textTransform: 'uppercase', color: '#EFF4FF', textDecoration: 'none' }}
-                      onMouseEnter={e => (e.currentTarget.style.color = '#6FFF00')}
-                      onMouseLeave={e => (e.currentTarget.style.color = '#EFF4FF')}
+                    <a
+                      href={href}
+                      target={href.startsWith('http') ? '_blank' : undefined}
+                      rel="noopener noreferrer"
+                      className="nav-link"
+                      style={{ fontFamily: '"Anton", sans-serif', fontSize: 13, textTransform: 'uppercase', color: '#EFF4FF', textDecoration: 'none' }}
                     >
                       {label}
                     </a>
@@ -102,20 +116,24 @@ export default function App() {
                 ))}
               </ul>
             </nav>
-
           </div>
 
           {/* Hero Body */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: 96 }}>
-            <div style={{ position: 'relative', maxWidth: 780, marginLeft: 128 }}>
-              <h1 style={{
-                fontFamily: '"Anton", sans-serif',
-                fontSize: 'clamp(40px, 7vw, 90px)',
-                textTransform: 'uppercase',
-                color: '#EFF4FF',
-                lineHeight: 1,
-                margin: 0,
-              }}>
+            <div className="hero-content" style={{ position: 'relative', maxWidth: 780, marginLeft: 'clamp(24px, 7vw, 128px)' }}>
+              {/* Glitch heading */}
+              <h1
+                className="glitch-wrapper neon-glow-cream"
+                data-text="Beyond earth and ( its ) familiar boundaries"
+                style={{
+                  fontFamily: '"Anton", sans-serif',
+                  fontSize: 'clamp(40px, 7vw, 90px)',
+                  textTransform: 'uppercase',
+                  color: '#EFF4FF',
+                  lineHeight: 1,
+                  margin: 0,
+                }}
+              >
                 Beyond earth
                 <br />
                 and ( its ) familiar
@@ -124,7 +142,7 @@ export default function App() {
               </h1>
 
               {/* Cursive Accent */}
-              <span style={{
+              <span className="neon-glow" style={{
                 position: 'absolute',
                 right: -32,
                 top: 8,
@@ -160,12 +178,12 @@ export default function App() {
         />
         <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(1,8,40,0.2)' }} />
 
-        <div style={{ position: 'relative', zIndex: 10, maxWidth: 1831, margin: '0 auto', padding: '96px 64px', display: 'flex', flexDirection: 'column', gap: 80 }}>
+        <div className="section-pad" style={{ position: 'relative', zIndex: 10, maxWidth: 1831, margin: '0 auto', padding: '96px 64px', display: 'flex', flexDirection: 'column', gap: 80 }}>
           {/* Top Row */}
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between', gap: 64 }}>
             {/* Left Heading */}
             <div style={{ position: 'relative' }}>
-              <h2 style={{
+              <h2 className="neon-glow-cream" style={{
                 fontFamily: '"Anton", sans-serif',
                 fontSize: 'clamp(32px, 5vw, 60px)',
                 textTransform: 'uppercase',
@@ -177,7 +195,7 @@ export default function App() {
                 <br />
                 I'm fluff
               </h2>
-              <span style={{
+              <span className="neon-glow" style={{
                 position: 'absolute',
                 bottom: 0,
                 right: 0,
@@ -201,26 +219,22 @@ export default function App() {
       {/* SECTION 3: NFT COLLECTION GRID                          */}
       {/* ─────────────────────────────────────────────────────── */}
       <section style={{ backgroundColor: '#010828', width: '100%', padding: '96px 0' }}>
-        <div style={{ maxWidth: 1831, margin: '0 auto', padding: '0 64px' }}>
+        <div className="section-pad" style={{ maxWidth: 1831, margin: '0 auto', padding: '0 clamp(24px, 4vw, 64px)' }}>
           {/* Header Row */}
-          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', gap: 32, marginBottom: 64 }}>
-            {/* Left Heading */}
-            <div>
-              <div style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
-                The <span style={{ fontFamily: '"Condiment", cursive', color: '#6FFF00' }}>Fluff</span> Universe
-              </div>
-              <div style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
-                Collection
-              </div>
+          <div style={{ marginBottom: 64 }}>
+            <div className="neon-glow-cream" style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
+              The <span className="neon-glow" style={{ fontFamily: '"Condiment", cursive', color: '#6FFF00' }}>Fluff</span> Universe
             </div>
-
+            <div className="neon-glow-cream" style={{ fontFamily: '"Anton", sans-serif', fontSize: 'clamp(32px, 5vw, 60px)', textTransform: 'uppercase', color: '#EFF4FF', lineHeight: 1 }}>
+              Collection
+            </div>
           </div>
 
           {/* Card Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 24, maxWidth: 600, margin: '0 auto' }}>
             {NFT_CARDS.map((card, i) => (
               <a key={i} href="https://fluff-shop.fourthwall.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                <div className="liquid-glass" style={{ borderRadius: 32, padding: 18, cursor: 'pointer' }}>
+                <div className="liquid-glass nft-card-wrap" style={{ borderRadius: 32, padding: 18, cursor: 'pointer' }}>
                   {/* Square video */}
                   <div style={{ position: 'relative', paddingBottom: '100%', borderRadius: 24, overflow: 'hidden' }}>
                     <video
@@ -245,6 +259,7 @@ export default function App() {
                       background: 'linear-gradient(135deg, #b724ff, #7c3aed)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       boxShadow: '0 8px 24px rgba(139,92,246,0.5)',
+                      transition: 'transform 200ms ease',
                     }}>
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6" />
@@ -272,11 +287,11 @@ export default function App() {
         <div style={{
           position: 'absolute', inset: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
-          paddingRight: '20%', paddingLeft: '15%',
+          paddingRight: 'clamp(5%, 20%, 20%)', paddingLeft: 'clamp(5%, 15%, 15%)',
         }}>
           <div style={{ position: 'relative', textAlign: 'right' }}>
             {/* "Go beyond" cursive */}
-            <span style={{
+            <span className="neon-glow" style={{
               position: 'absolute',
               top: 'clamp(-20px, -3vw, -48px)',
               left: 0,
@@ -292,7 +307,7 @@ export default function App() {
               Go beyond
             </span>
 
-            <h2 style={{
+            <h2 className="neon-glow-cream" style={{
               fontFamily: '"Anton", sans-serif',
               fontSize: 'clamp(16px, 4.5vw, 60px)',
               textTransform: 'uppercase',
@@ -326,10 +341,10 @@ export default function App() {
                   border: 'none',
                   borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.1)' : 'none',
                   background: 'transparent', cursor: 'pointer',
-                  transition: 'background 0.2s',
+                  transition: 'background 200ms ease, transform 200ms ease',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.background = 'rgba(255,255,255,0.1)')}
-                onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.transform = 'scale(1.05)' }}
+                onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.transform = 'scale(1)' }}
               >
                 <span style={{ display: 'flex', width: 'clamp(16px, 3.5vw, 24px)', height: 'clamp(16px, 3.5vw, 24px)', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon size={20} color="#EFF4FF" />
